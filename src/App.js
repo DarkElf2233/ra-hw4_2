@@ -5,7 +5,7 @@ import { TrainingRecords } from './components/TrainingRecords'
 function App() {
   return (
     <div className="content">
-      
+      <TrainingRecords />
     </div>
   );
 }
