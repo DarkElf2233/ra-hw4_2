@@ -7,10 +7,14 @@ export const TrainingRecordsForm = (props) => {
     const dateToShow = e.target[0].value
     const dateToSort = e.target[0].value.split('.').reverse().join('-')
     const distance = parseFloat(e.target[1].value)
-    props.handleFormData({ dateToShow: dateToShow, dateToSort: dateToSort, distance: distance })
-
     e.target[0].value = ''
     e.target[1].value = ''
+
+    if (new Date(dateToSort).toString() === 'Invalid Date') return
+
+    if (distance <= 0) return
+
+    props.handleFormData({ dateToShow: dateToShow, dateToSort: dateToSort, distance: distance })
   }
 
   return (
