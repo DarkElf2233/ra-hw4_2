@@ -12,7 +12,7 @@ export const TrainingRecordsForm = (props) => {
 
     if (new Date(dateToSort).toString() === 'Invalid Date') return
 
-    if (distance <= 0) return
+    if (distance <= 0 || isNaN(distance)) return
 
     props.handleFormData({ dateToShow: dateToShow, dateToSort: dateToSort, distance: distance })
   }
@@ -21,12 +21,12 @@ export const TrainingRecordsForm = (props) => {
     <form className='form' autoComplete='false' onSubmit={handleSubmit}>
       <div className="form-group1">
         <label htmlFor="date">Дата</label>
-        <input type="text" id='date' name='date' />
+        <input type="text" id='date' name='date' required />
       </div>
 
       <div className="form-group2">
         <label htmlFor="distance">Пройдено км</label>
-        <input type="text" id='distance' name='distance' />
+        <input type="text" id='distance' name='distance' required />
       </div>
       <button className="btn" type="submit">ОК</button>
     </form>
