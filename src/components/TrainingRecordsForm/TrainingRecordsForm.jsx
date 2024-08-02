@@ -10,8 +10,6 @@ export const TrainingRecordsForm = (props) => {
     e.target[0].value = ''
     e.target[1].value = ''
 
-    if (distance <= 0 || isNaN(distance)) return
-
     props.handleFormData({ dateToShow: dateToShow, dateToSort: dateToSort, distance: distance })
   }
 
